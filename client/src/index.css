@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-odisha-primary: #102C57; /* Deep cooling blue instead of red */
+  --color-odisha-primary-light: #22437a;
+  --color-odisha-secondary: #00a65a; /* Cooling green from the original site */
+  --color-odisha-secondary-dark: #008a4a;
+  --color-odisha-tertiary: #1A402D;
+  --color-odisha-navy: #102C57;
+  --color-odisha-bg: #F0F4F8; /* Cool grayish blue background */
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+  
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-odisha-bg text-gray-800;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-odisha-navy;
+  }
+}
+
+@layer utilities {
+  .bg-pattern {
+    background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 20.5V18H0v-2h20v-2.5L22.5 16 20 18.5V16h20v2H20v2.5L17.5 18l2.5-2.5zM20 40.5V38H0v-2h20v-2.5L22.5 36 20 38.5V36h20v2H20v2.5L17.5 38l2.5-2.5zM20.5 20H18V0h-2v20h-2.5L16 22.5 18.5 20H16v20h2V20h2.5L18 17.5l-2.5 2.5z" fill="%23222971" fill-opacity="0.02" fill-rule="evenodd"/></svg>');
+  }
+  .bg-smooth {
+    @apply bg-gradient-to-br from-[#E0EAFC] to-[#CFDEF3]; /* Smooth cooling blue gradient */
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .glass-dark {
+    @apply bg-odisha-navy/80 backdrop-blur-lg border border-white/10 shadow-2xl text-white;
+  }
+}
