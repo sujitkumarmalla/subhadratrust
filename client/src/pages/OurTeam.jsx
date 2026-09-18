@@ -25,10 +25,10 @@ const OurTeam = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Team Member 1 */}
-            <div className="bg-white rounded-5xl overflow-hidden shadow-lg border border-gray-100 text-center group">
-              <div className="h-64 overflow-hidden relative">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 text-center group">
+              <div className="h-72 overflow-hidden relative">
                 {/* Professional Team Member Image */}
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="Dr. Prakash Chandra" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="Dr. Prakash Chandra" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-odisha-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaLinkedin /></a>
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaEnvelope /></a>
@@ -43,8 +43,8 @@ const OurTeam = () => {
 
             {/* Team Member 2 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 text-center group">
-              <div className="h-64 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Sunita Mohanty" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="h-72 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Sunita Mohanty" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-odisha-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaLinkedin /></a>
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaEnvelope /></a>
@@ -59,8 +59,8 @@ const OurTeam = () => {
 
             {/* Team Member 3 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 text-center group">
-              <div className="h-64 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" alt="Ravi Kumar" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="h-72 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" alt="Ravi Kumar" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-odisha-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaLinkedin /></a>
                   <a href="#" className="w-10 h-10 rounded-full bg-white text-odisha-navy flex items-center justify-center hover:bg-odisha-secondary transition-colors"><FaEnvelope /></a>
@@ -79,14 +79,14 @@ const OurTeam = () => {
       {/* Children Image Section */}
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="bg-odisha-navy rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+          <div className="bg-odisha-navy rounded-4xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
             <div className="md:w-1/2 p-12 flex flex-col justify-center">
               <h3 className="text-3xl font-serif text-white mb-6">Our Inspiration</h3>
               <p className="text-white/80 mb-6 leading-relaxed">
                 The smiles on these faces are what drive our team every single day. Subhadra Charitable Trust was built on the foundation of hope and the unwavering belief that every child deserves a chance to shine brightly.
               </p>
             </div>
-            <div className="md:w-1/2 relative min-h-[300px]">
+            <div className="md:w-1/2 relative min-h-[450px]">
               <img src="/img/poor_child_3.jpg" alt="Smiling Children" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
