@@ -15,6 +15,8 @@ import PagePlaceholder from './pages/PagePlaceholder';
 import Impact from './pages/Impact';
 import Campaigns from './pages/Campaigns';
 import Volunteer from './pages/Volunteer';
+import HolisticCare from './pages/HolisticCare';
+import HealthNutrition from './pages/HealthNutrition';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -39,6 +41,8 @@ function App() {
             <Route path="/impact" element={<Impact />} />
             <Route path="/campaigns" element={<Campaigns />} />
             <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/what-we-do/holistic-care" element={<HolisticCare />} />
+            <Route path="/what-we-do/health-nutrition" element={<HealthNutrition />} />
             
             {/* Catch-all route for other navbar links to demonstrate working router */}
             <Route path="*" element={<PagePlaceholder />} />

@@ -1,7 +1,23 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
+const heroImages = [
+  '/img/poor_child_3.jpg',
+  '/img/poor_child.jpg',
+  '/img/poor_child_5.jpg',
+  '/img/child_donation.jpg'
+];
+
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="bg-smooth min-h-screen">
       {/* Hero Section */}
@@ -9,15 +25,18 @@ const Home = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0 bg-odisha-navy">
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10"></div>
-          <img 
-            src="/img/poor_child_3.jpg" 
-            alt="Children of Odisha" 
-            className="w-full h-full object-cover object-center scale-105 animate-pulse-slow"
-          />
+          {heroImages.map((img, index) => (
+            <img 
+              key={index}
+              src={img} 
+              alt="Subhadra Charitable Trust Activity" 
+              className={`absolute inset-0 w-full h-full object-cover object-center scale-110 [animation:pan-image_30s_ease-in-out_infinite_alternate] transition-all duration-1000 ease-in-out ${index === currentImage ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'}`}
+            />
+          ))}
         </div>
 
         <div className="relative z-20 text-center max-w-4xl mx-auto px-4 mt-16">
-          <div className="glass-dark p-10 rounded-3xl animate-fade-in-up">
+          <div className="glass-dark zigzag-card px-10 rounded-xl animate-fade-in-up">
             <h2 className="text-5xl md:text-7xl font-serif text-white mb-6 drop-shadow-lg">
               Empowering Minds, <br/><span className="text-odisha-secondary">Uplifting Society</span>
             </h2>

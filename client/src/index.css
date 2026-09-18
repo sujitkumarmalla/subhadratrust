@@ -26,6 +26,11 @@
       transform: translateY(0);
     }
   }
+  @keyframes pan-image {
+    0% { object-position: 0% 50%; }
+    50% { object-position: 100% 50%; }
+    100% { object-position: 0% 50%; }
+  }
   @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -53,6 +58,17 @@
     @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
   }
   .glass-dark {
-    @apply bg-odisha-navy/80 backdrop-blur-lg border border-white/10 shadow-2xl text-white;
+    @apply bg-[#102C57]/40 backdrop-blur-xl shadow-2xl text-white;
+  }
+  .zigzag-card {
+    --mask: 
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 0 100% / 30px 15px repeat-x,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 0 0 / 30px 15px repeat-x,
+      linear-gradient(#000 0 0) 50% / 100% calc(100% - 30px) no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    /* Extra padding to ensure content doesn't get clipped by zigzag */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
