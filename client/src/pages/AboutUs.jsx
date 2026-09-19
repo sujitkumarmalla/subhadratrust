@@ -25,9 +25,10 @@ const AboutUs = () => {
             </div>
             
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-serif text-odisha-navy relative inline-block pb-4 mb-6 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+              <h2 className="text-3xl font-serif text-odisha-navy mb-2">
                 Subhadra Charitable Trust
               </h2>
+              <img src="/img/title-bottom.png" alt="" className="w-auto h-auto mb-6" />
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Subhadra Charitable Trust (SCT) is a registered entity founded by a group of social and educational enthusiasts of Odisha. With a clear vision to uplift society through quality education, we have been working tirelessly to create opportunities for the underprivileged.
               </p>

@@ -1,59 +1,88 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const heroImages = [
-  '/img/poor_child_3.jpg',
-  '/img/poor_child.jpg',
-  '/img/poor_child_5.jpg',
-  '/img/child_donation.jpg'
+  '/img/banner-1.jpeg',
+  '/img/banner-2.jpeg',
+  '/img/banner-3.jpg'
 ];
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
+      nextImage();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
+  const [causeGroupIndex, setCauseGroupIndex] = useState(0);
+
+  const causeGroups = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 1]
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCauseGroupIndex(prev => (prev + 1) % causeGroups.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
+
   return (
     <div className="bg-smooth min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0 bg-odisha-navy">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10"></div>
-          {heroImages.map((img, index) => (
-            <img 
+      {/* Hero Slider Section */}
+      <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden bg-gray-100 group">
+        {heroImages.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Subhadra Charitable Trust Slide ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-fill md:object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          />
+        ))}
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevImage}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-r-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
+          aria-label="Previous Slide"
+        >
+          <FaChevronLeft className="text-xl md:text-2xl" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-l-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
+          aria-label="Next Slide"
+        >
+          <FaChevronRight className="text-xl md:text-2xl" />
+        </button>
+
+        {/* Dots Navigation */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+          {heroImages.map((_, index) => (
+            <button
               key={index}
-              src={img} 
-              alt="Subhadra Charitable Trust Activity" 
-              className={`absolute inset-0 w-full h-full object-cover object-center scale-110 [animation:pan-image_30s_ease-in-out_infinite_alternate] transition-all duration-1000 ease-in-out ${index === currentImage ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'}`}
-            />
+              onClick={() => setCurrentImage(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === currentImage ? 'bg-[#00a651]' : 'bg-white/50 hover:bg-white/80'}`}
+              aria-label={`Go to slide ${index + 1}`}
+            ></button>
           ))}
         </div>
-
-        <div className="relative z-20 text-center max-w-4xl mx-auto px-4 mt-16">
-          <div className="glass-dark zigzag-card px-10 rounded-xl animate-fade-in-up">
-            <h2 className="text-5xl md:text-7xl font-serif text-white mb-6 drop-shadow-lg">
-              Empowering Minds, <br/><span className="text-odisha-secondary">Uplifting Society</span>
-            </h2>
-            <p className="text-xl text-white/90 mb-10 drop-shadow-md max-w-2xl mx-auto">
-              Subhadra Charitable Trust is dedicated to fostering education, research, and holistic development across Odisha with deep-rooted cultural values.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/campaigns" className="bg-odisha-secondary hover:bg-odisha-secondary-dark text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105">
-                Support Our Campaigns
-              </Link>
-              <Link to="/volunteer" className="bg-white hover:bg-gray-100 text-odisha-navy font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105">
-                Become a Volunteer
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
+
 
       {/* Quick Impact Banner */}
       <div className="bg-odisha-primary py-8 relative z-30 shadow-2xl -mt-10 mx-4 md:mx-auto max-w-6xl rounded-2xl animate-fade-in-up delay-200">
@@ -75,70 +104,73 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Featured Wings Section */}
-      <section className="py-20 px-4 relative z-10">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
-              Our Wings & Association
+      {/* Our Causes Section */}
+      <section className="py-16 bg-white relative">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold tracking-wide text-gray-800">
+              OUR <span className="text-[#00a651]">CAUSES</span>
             </h2>
-            <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
-              Discover the diverse educational and social initiatives driven by the Subhadra Charitable Trust to build a brighter future.
+            <div className="flex justify-center items-center mt-4 mb-4">
+              <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
+            </div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              our charity paves a way for the underprivileged to dream and hope for a better future
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Wing 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-odisha-secondary transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-              <img src="/img/poor_child_8.jpg" alt="Cohen International School" className="h-48 w-full object-cover border-b-2 border-odisha-secondary" />
-              <div className="p-6">
-                <h3 className="text-xl font-serif text-odisha-navy mb-3">Cohen International School</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Providing world-class education with a focus on holistic student development and academic excellence.</p>
-                <Link to="#" className="inline-flex items-center text-odisha-primary font-semibold hover:text-odisha-navy transition-colors group-hover:gap-2">
-                  Learn More <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
+          {/* Causes Slider (Fade Effect) */}
+          <div className="relative grid min-h-[500px]">
+            {causeGroups.map((group, index) => (
+              <div
+                key={index}
+                className={`col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-1000 ease-in-out ${index === causeGroupIndex ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'}`}
+              >
+                {group.map((num, i) => (
+                  <div key={`${index}-${i}`} className="bg-[#f9f9f9] border border-gray-200 rounded-sm flex flex-col h-full">
+                    <img
+                      src={`/img/couses-${num}.jpg`}
+                      alt={`Cause ${num}`}
+                      className="w-full h-56 object-cover"
+                    />
+                    <div className="p-8 flex-grow flex flex-col text-center">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        {num === 1 ? 'Emergency relief'
+                          : num === 2 ? 'Holistic Care for Children'
+                            : num === 3 ? 'Health & nutrition Causes'
+                              : num === 4 ? 'Livelihood & capacity building'
+                                : num === 5 ? 'Women Empowerment'
+                                  : num === 6 ? 'Skill & entrepreneurship development'
+                                    : num === 7 ? 'Environment & Sustainability'
+                                      : 'Water, Sanitation & Hygiene'}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-8 flex-grow leading-relaxed">
+                        {num === 1
+                          ? "We aim at 'no poverty' and 'zero hunger', aligning with SDGs 1 & 2. We provide basic food, clothing, and necessary items for the sustenance of vulnerable people."
+                          : num === 2
+                            ? "Imbibed with SDG 4 on 'quality education', SCT focuses on children's education with utmost priority, shaping their future."
+                            : num === 3
+                              ? "Focusing on SDG 3, 'good health and well-being', the Trust has the target to work on health intervention aspects."
+                              : num === 4
+                                ? "Driven by SDG 10 on 'reduced inequalities', we are planning to work on livelihood and capacity building for vulnerable communities."
+                                : num === 5
+                                  ? "In all its associations and institutions, SCT provides equal rights and opportunities for girl children and women."
+                                  : num === 6
+                                    ? "We empower youths by imparting vital vocational skills and entrepreneurship training to foster self-reliance and economic growth."
+                                    : num === 7
+                                      ? "Committed to a greener future, we champion environmental protection, sustainable practices, and community awareness."
+                                      : "Ensuring access to clean water and promoting safe hygiene practices to improve the overall health of rural and urban communities."}
+                      </p>
+                      <div className="text-left mt-auto">
+                        <Link to="/donate" className="inline-block border border-gray-400 text-gray-700 font-semibold py-2 px-6 rounded-sm hover:bg-[#00a651] hover:border-[#00a651] hover:text-white transition-colors uppercase text-sm tracking-wide">
+                          Donate
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
-
-            {/* Wing 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-odisha-secondary transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-              <img src="/img/rural_school.jpg" alt="Vidwan Publications" className="h-48 w-full object-cover border-b-2 border-odisha-secondary" />
-              <div className="p-6">
-                <h3 className="text-xl font-serif text-odisha-navy mb-3">Publication Associate</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Publishing high-quality educational materials and books to support learning across levels.</p>
-                <Link to="/public-associate" className="inline-flex items-center text-odisha-primary font-semibold hover:text-odisha-navy transition-colors group-hover:gap-2">
-                  Learn More <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Wing 3 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-odisha-secondary transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-              <img src="/img/poor_child.jpg" alt="Vidwan Classes" className="h-48 w-full object-cover border-b-2 border-odisha-secondary" />
-              <div className="p-6">
-                <h3 className="text-xl font-serif text-odisha-navy mb-3">Vidwan Classes</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Premier coaching and guidance for students aiming to excel in competitive examinations.</p>
-                <Link to="#" className="inline-flex items-center text-odisha-primary font-semibold hover:text-odisha-navy transition-colors group-hover:gap-2">
-                  Learn More <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Wing 4 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-odisha-secondary transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-              <img src="/img/poor_child_7.jpg" alt="Science Movement" className="h-48 w-full object-cover border-b-2 border-odisha-secondary" />
-              <div className="p-6">
-                <h3 className="text-xl font-serif text-odisha-navy mb-3">Science Movement</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Fostering scientific temper and curiosity among the youth through interactive programs.</p>
-                <Link to="#" className="inline-flex items-center text-odisha-primary font-semibold hover:text-odisha-navy transition-colors group-hover:gap-2">
-                  Learn More <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -149,7 +181,7 @@ const Home = () => {
             <div className="md:w-1/2">
               <div className="relative">
                 <div className="absolute inset-0 bg-odisha-primary rounded-3xl transform translate-x-4 translate-y-4 opacity-50"></div>
-                <img src="/img/poor_child_2.jpg" alt="Children learning" className="relative z-10 rounded-3xl shadow-xl w-full object-cover h-[400px]" />
+                <img src="/img/couses-5.jpg" alt="Children learning" className="relative z-10 rounded-3xl shadow-xl w-full object-cover h-[400px]" />
               </div>
             </div>
             <div className="md:w-1/2">
@@ -183,16 +215,17 @@ const Home = () => {
       {/* 2. Urgent Causes Section */}
       <section className="py-20 px-4 bg-gray-50 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-4xl font-serif text-odisha-navy mb-4">
               Urgent Causes Need Your Help
             </h2>
+            <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Cause 1 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
               <div className="relative h-56 overflow-hidden">
-                <img src="/img/poor_child_1.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/img/couses-1.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute top-4 right-4 bg-odisha-secondary text-white text-xs font-bold px-3 py-1 rounded-full">URGENT</div>
               </div>
               <div className="p-6">
@@ -213,7 +246,7 @@ const Home = () => {
             {/* Cause 2 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
               <div className="relative h-56 overflow-hidden">
-                <img src="/img/poor_child_6.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/img/couses-2.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif text-odisha-navy font-bold mb-3">Nutritious Meals Program</h3>
@@ -233,7 +266,7 @@ const Home = () => {
             {/* Cause 3 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
               <div className="relative h-56 overflow-hidden">
-                <img src="/img/poor_child_4.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/img/couses-3.jpg" alt="Cause" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif text-odisha-navy font-bold mb-3">School Infrastructure Setup</h3>
@@ -255,9 +288,9 @@ const Home = () => {
       </section>
 
       {/* 3. CTA Volunteer Section */}
-      <section className="relative py-24 bg-odisha-navy overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/img/charity_team.jpg" alt="Volunteers" className="w-full h-full object-cover opacity-20" />
+      <section className="relative py-50 bg-odisha-navy overflow-hidden">
+        <div className="absolute inset-0 z-2">
+          <img src="/img/footer-above.jpg" alt="Volunteers" className="w-full h-full object-cover opacity-20" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">Be the Change You Wish to See</h2>

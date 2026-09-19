@@ -14,10 +14,11 @@ const OurHistory = () => {
       {/* History Content Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-3xl font-serif text-odisha-navy mb-4">
               Our Journey of Impact
             </h2>
+            <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
             <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
               From a small initiative to a widespread educational movement, trace the timeline of Subhadra Charitable Trust's dedication to Odisha's youth.
             </p>

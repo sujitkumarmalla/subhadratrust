@@ -8,13 +8,14 @@ const Gallery = () => {
 
   // Images depicting children in school, rural education, and charitable work
   const images = [
-    { src: '/img/poor_child_2.jpg', alt: 'Children studying in rural school', span: 'col-span-1 md:col-span-2 row-span-2' },
-    { src: '/img/poor_child_4.jpg', alt: 'Smiling students in classroom', span: 'col-span-1' },
-    { src: '/img/poor_child_1.jpg', alt: 'Group of children playing', span: 'col-span-1' },
-    { src: '/img/science_workshop.jpg', alt: 'Young boy focusing on his notebook', span: 'col-span-1 md:col-span-2' },
-    { src: '/img/child_donation.jpg', alt: 'Teacher distributing books', span: 'col-span-1' },
-    { src: '/img/charity_team.jpg', alt: 'Happy students outside', span: 'col-span-1' },
-    { src: '/img/poor_child_5.jpg', alt: 'Classroom learning session', span: 'col-span-1 md:col-span-3' }
+    { src: '/img/couses-1.jpg', alt: 'Cause 1', span: 'col-span-1 md:col-span-2 row-span-2' },
+    { src: '/img/couses-2.jpg', alt: 'Cause 2', span: 'col-span-1' },
+    { src: '/img/couses-3.jpg', alt: 'Cause 3', span: 'col-span-1' },
+    { src: '/img/couses-4.jpg', alt: 'Cause 4', span: 'col-span-1 md:col-span-2' },
+    { src: '/img/couses-5.jpg', alt: 'Cause 5', span: 'col-span-1' },
+    { src: '/img/couses-6.jpg', alt: 'Cause 6', span: 'col-span-1' },
+    { src: '/img/couses-7.jpg', alt: 'Cause 7', span: 'col-span-1 md:col-span-2' },
+    { src: '/img/couses-8.jpg', alt: 'Cause 8', span: 'col-span-1 md:col-span-3' }
   ];
 
   return (
@@ -28,10 +29,11 @@ const Gallery = () => {
 
       <section className="py-20 px-4 flex-grow">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-3xl font-serif text-odisha-navy mb-4">
               Faces of Our Future
             </h2>
+            <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
             <p className="mt-6 text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Every picture tells a story of hope, resilience, and the transformative power of education. Explore moments captured from our schools and outreach programs.
             </p>

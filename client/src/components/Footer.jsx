@@ -6,56 +6,82 @@ const Footer = () => {
     <footer className="bg-odisha-navy text-white/80 pt-16 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* About */}
+          {/* About Us & Newsletter */}
           <div>
-            <Link to="/" className="flex items-center space-x-3 mb-6 hover:opacity-80 transition-opacity">
-              <img src="https://www.subhadracharitabletrust.org/img/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full" />
-              <div>
-                <h3 className="text-white text-lg font-serif">Subhadra</h3>
-                <p className="text-odisha-secondary text-xs">CHARITABLE TRUST</p>
-              </div>
-            </Link>
-            <p className="mb-6 text-sm leading-relaxed">
-              Dedicated to fostering education, research, and holistic development across Odisha with deep-rooted cultural values.
+            <h4 className="text-odisha-secondary text-lg font-serif mb-2 uppercase">About Us</h4>
+            <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
+            <p className="mb-8 text-sm leading-relaxed text-gray-300">
+              Subhadra Charitable Trust (SCT) is a registered entity founded by a group of social and educational enthusiasts of Odisha.
             </p>
-            <div className="flex space-x-3">
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaFacebookF /></a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaTwitter /></a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaLinkedinIn /></a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaInstagram /></a>
+            
+            <h4 className="text-odisha-secondary text-lg font-serif mb-2 uppercase">Newsletter</h4>
+            <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
+            <p className="mb-4 text-sm text-gray-300">Select your newsletters, enter your email address, and click "Subscribe"</p>
+            <div className="flex">
+              <input type="email" placeholder="Email address" className="w-full px-3 py-2 text-gray-900 text-sm focus:outline-none" />
+              <button className="bg-odisha-primary hover:bg-[#008c44] px-4 py-2 text-white text-sm font-semibold transition-colors">Subscribe</button>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-odisha-secondary text-lg font-serif mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-odisha-primary">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="/" className="hover:text-odisha-secondary transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Our Wings</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Gallery</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Contact</a></li>
+            <h4 className="text-odisha-secondary text-lg font-serif mb-2 uppercase">Quick Link</h4>
+            <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li><Link to="/mega" className="hover:text-odisha-primary transition-colors">Our Mega successes</Link></li>
+              <li><Link to="/activity-1" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
+              <li><Link to="/teachers" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
+              <li><Link to="/student" className="hover:text-odisha-primary transition-colors">Student awareness program</Link></li>
+              <li><Link to="/emergency" className="hover:text-odisha-primary transition-colors">Emergency relief</Link></li>
+              <li><Link to="/skill" className="hover:text-odisha-primary transition-colors">Skill & entrepreneurship development</Link></li>
+              <li><Link to="/ets" className="hover:text-odisha-primary transition-colors">Environment, Technology & Sustainability</Link></li>
+              <li><Link to="/wash" className="hover:text-odisha-primary transition-colors">Water, Sanitation & Hygiene</Link></li>
+              <li><Link to="/csr-or-program" className="hover:text-odisha-primary transition-colors">CSR or Program Partnership</Link></li>
             </ul>
           </div>
 
-          {/* Wings */}
+          {/* Program Highlights */}
           <div>
-            <h4 className="text-odisha-secondary text-lg font-serif mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-odisha-primary">Program Highlights</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Knowledge Associate</a></li>
-              <li><a href="/public-associate" className="hover:text-odisha-secondary transition-colors">Publication Associate</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Training Associate</a></li>
-              <li><a href="#" className="hover:text-odisha-secondary transition-colors">Science Movement</a></li>
+            <h4 className="text-odisha-secondary text-lg font-serif mb-2 uppercase">Program Highlights</h4>
+            <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li><Link to="/knowledge" className="hover:text-odisha-primary transition-colors">Knowledge Associate</Link></li>
+              <li><Link to="/public" className="hover:text-odisha-primary transition-colors">Publication Associate</Link></li>
+              <li><Link to="/training" className="hover:text-odisha-primary transition-colors">Training Associate</Link></li>
+              <li><Link to="/activity-1" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
+              <li><Link to="/teachers" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
+              <li><Link to="/annual-reports" className="hover:text-odisha-primary transition-colors">Annual Reports</Link></li>
+              <li><Link to="/career" className="hover:text-odisha-primary transition-colors">Career</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-odisha-secondary text-lg font-serif mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-odisha-primary">Contact Us</h4>
-            <div className="space-y-4 text-sm">
-              <p className="flex items-start"><FaMapMarkerAlt className="text-odisha-secondary mt-1 mr-3 flex-shrink-0" /> Bhubaneswar, Odisha, India</p>
-              <p className="flex items-center"><FaPhone className="text-odisha-secondary mr-3 flex-shrink-0" /> +91-9439112233</p>
-              <p className="flex items-center"><FaEnvelope className="text-odisha-secondary mr-3 flex-shrink-0" /> subhadratrust@gmail.com</p>
+            <h4 className="text-odisha-secondary text-lg font-serif mb-2 uppercase">Contact Details</h4>
+            <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
+            <div className="space-y-4 text-sm text-gray-300">
+              <p className="flex items-start">
+                <FaPhone className="text-odisha-secondary mt-1 mr-3 flex-shrink-0" />
+                <span>+91-9439112233</span>
+              </p>
+              <p className="flex items-start">
+                <FaMapMarkerAlt className="text-odisha-secondary mt-1 mr-3 flex-shrink-0" />
+                <span><strong className="text-white font-medium">Office address:</strong> 308, Mahanee Complex, District Center (Near Axis Bank), Bhubaneswar-751016, Odisha</span>
+              </p>
+              <p className="flex items-start">
+                <FaMapMarkerAlt className="text-odisha-secondary mt-1 mr-3 flex-shrink-0" />
+                <span><strong className="text-white font-medium">Registered Address:</strong> Subhadra Charitable Trust, 6th Avenue, Flat No.149, First Floor, Block-6 (Lilly), P.O/P.S- Chandrasekharpur, Bhubaneswar-751016, Khurda, Odisha</span>
+              </p>
+              <p className="flex items-center">
+                <FaEnvelope className="text-odisha-secondary mr-3 flex-shrink-0" />
+                <a href="mailto:subhadratrust@gmail.com" className="hover:text-odisha-primary transition-colors">subhadratrust@gmail.com</a>
+              </p>
+            </div>
+            <div className="flex space-x-3 mt-8">
+              <a href="#" className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaFacebookF size={14} /></a>
+              <a href="#" className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaTwitter size={14} /></a>
+              <a href="#" className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaLinkedinIn size={14} /></a>
+              <a href="#" className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-odisha-primary transition-colors"><FaInstagram size={14} /></a>
             </div>
           </div>
         </div>

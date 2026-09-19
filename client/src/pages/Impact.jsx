@@ -12,10 +12,11 @@ const Impact = () => {
       {/* Stats Section */}
       <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-4xl font-serif text-odisha-navy mb-4">
               Numbers That Matter
             </h2>
+            <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="glass p-8 rounded-2xl text-center animate-fade-in-up">
@@ -46,10 +47,11 @@ const Impact = () => {
       {/* Testimonials */}
       <section className="py-20 px-4 bg-white/50">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-odisha-navy relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-odisha-primary after:rounded-full">
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-4xl font-serif text-odisha-navy mb-4">
               Stories of Hope
             </h2>
+            <img src="/img/title-bottom.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {/* Story 1 */}
