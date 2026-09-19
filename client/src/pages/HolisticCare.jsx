@@ -1,76 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaHeart, FaGraduationCap, FaHome, FaArrowRight } from 'react-icons/fa';
+import { FaChild } from 'react-icons/fa';
+import PageBanner from '../components/PageBanner';
 
 const HolisticCare = () => {
   return (
-    <div className="bg-smooth min-h-screen pt-24 pb-12">
-      {/* Hero Header */}
-      <section className="relative py-20 bg-odisha-navy text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/img/poor_child_2.jpg" alt="Holistic Care" className="w-full h-full object-cover opacity-30" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-md">Holistic Care for Children</h1>
-          <p className="text-xl max-w-2xl mx-auto text-white/90 drop-shadow-sm">
-            Providing love, shelter, and education to orphans and underprivileged children to ensure a brighter future.
-          </p>
-        </div>
-      </section>
+    <div className="bg-smooth min-h-screen">
+      <PageBanner 
+        title="Holistic Care for Children"
+        breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'What We Do' }, { label: 'Holistic Care' }]}
+        backPath="/"
+        backText="BACK TO HOME"
+      />
 
-      {/* Main Content */}
-      <section className="py-16 container mx-auto px-4 max-w-6xl">
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl font-serif text-odisha-navy mb-6">Nurturing Every Child's Potential</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Every child deserves a safe place to call home, proper nutrition, and quality education. Subhadra Charitable Trust is committed to funding orphanages, supporting poor families, and ensuring that no child is left behind due to financial constraints.
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Our holistic care approach addresses the physical, emotional, and educational needs of vulnerable children across Odisha, guiding them from early childhood to independent adulthood.
-            </p>
-            <Link to="/donate" className="inline-flex items-center bg-odisha-primary hover:bg-odisha-navy text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-              Support a Child Today <FaArrowRight className="ml-2" />
-            </Link>
-          </div>
-          <div className="md:w-1/2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-odisha-secondary rounded-3xl transform translate-x-4 translate-y-4 opacity-30"></div>
-              <img src="/img/child_donation.jpg" alt="Support a child" className="relative z-10 rounded-3xl shadow-xl w-full object-cover h-[400px]" />
+      {/* Main Content Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            {/* Text Side */}
+            <div className="md:w-1/2 flex flex-col justify-center">
+              <div className="inline-flex items-center space-x-2 text-odisha-secondary font-bold tracking-widest uppercase text-sm mb-4">
+                <FaChild />
+                <span>Nurturing the Future</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif text-odisha-navy mb-6 leading-tight">
+                Holistic Care for Children
+              </h2>
+              <p className="text-gray-700 mb-6 leading-relaxed text-justify">
+                Imbibed with SDG 4 on 'quality education', SCT focuses on children's education with utmost priority. In this regard, aiming for interventions SCT has a goal of opening, promoting, establishing, setting up, and running schools, colleges, and other educational establishments for the advancement of education relating to arts, science, literature, technical, medical, management, vocational, or musical courses. In addition, it aims to set up boarding houses, libraries, reading rooms, gymnasiums, and other training, skill development, and vocational centers. It has a goal to promote, advance, and encourage or aid in helping, promoting, and advancing primary, secondary, and higher education including medical, physical training, fine arts, crafts, and other welfare centers for the student. Vidwan Classes, Cohen International School, etc. are the brainchild towards achieving this goal. While establishing institutes, SCT aims to provide skilled, technical, and scientific education to enable the younger generation to develop self-confidence and skills to compete and succeed in the national and international fields. Aerospace engineering, Artificial intelligence, Coding, Vedic Maths, etc. are some of the innovative and unique initiatives of CIS in Odisha.
+              </p>
+              <p className="text-gray-700 mb-8 leading-relaxed text-justify">
+                However, the intervention is not limited to only education as SCT aims for the 'holistic care for the children'. Along with this, child rights, protections, and overall development of the child is the ultimate goal. Looking into the vulnerable situation of children from underprivileged families, SCT is planning to support them with student scholarships, and stipends, and render other kinds of support and aid to students including supply of books, medals, and titles without any distinction of caste, creed, race, region or gender. In its extracurricular activities, SCT has the target to promote sports, music, drama, arts, and cultures. To promote education among all in society, various publishing initiatives are to be undertaken for books, periodicals, journals, magazines, and other educational materials. Apart from the above, the Trust has plans for scholarships and financial assistance to deserving and needy students for elementary and higher education too. SCT looks forward to supporting talented and brilliant students from underprivileged families, children having no parents, and incapacitated parents through residential quality education in CIS. The school education is provided up to 12th standard with integrated coaching facilities. With good care and parental and mentoring support, the children are grown in a homely environment for a better future.
+              </p>
             </div>
-          </div>
-        </div>
 
-        {/* Key Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-blue-100 text-odisha-navy rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaHome />
+            {/* Image Side */}
+            <div className="md:w-1/2 w-full sticky top-32">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition-transform duration-500 relative group">
+                <div className="absolute inset-0 bg-odisha-navy/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                <img 
+                  src="/img/primary(7).jpg" 
+                  alt="Holistic Care for Children" 
+                  className="w-full h-auto object-cover relative z-0"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 z-20">
+                  <h3 className="text-white text-xl font-serif font-bold">Comprehensive Development</h3>
+                  <p className="text-white/80 text-sm">Empowering children through education, care, and support.</p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Safe Shelter & Orphanages</h3>
-            <p className="text-gray-600">
-              We fund and partner with local orphanages to provide a safe, loving, and hygienic environment for children without families.
-            </p>
-          </div>
-          
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-green-100 text-odisha-primary rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaGraduationCap />
-            </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Education Funding</h3>
-            <p className="text-gray-600">
-              We cover tuition fees, uniforms, books, and educational materials for children from economically weaker sections.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-red-100 text-odisha-secondary rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaHeart />
-            </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Emotional Support</h3>
-            <p className="text-gray-600">
-              Counseling and mentorship programs designed to help children overcome trauma and build strong, confident personalities.
-            </p>
           </div>
         </div>
       </section>

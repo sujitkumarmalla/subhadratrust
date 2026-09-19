@@ -3,7 +3,7 @@ import PageBanner from '../components/PageBanner';
 const PublicAssociate = () => {
   return (
     <div className="bg-smooth min-h-screen">
-      <PageBanner 
+      <PageBanner
         title="Publication Associate"
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Publication Associate' }]}
         backPath="/"
@@ -17,19 +17,19 @@ const PublicAssociate = () => {
             {/* Image Side */}
             <div className="md:w-5/12 bg-gray-100 relative min-h-[300px]">
               {/* Using a placeholder since we don't have primary.jpg locally yet */}
-              <img 
-                src="/img/poor_child_8.jpg" 
-                alt="Publication Associate" 
+              <img
+                src="/img/primary.jpg"
+                alt="Publication Associate"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            
+
             {/* Text Side */}
             <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
               <h3 className="text-3xl font-serif text-odisha-navy mb-6 pb-4 border-b-2 border-odisha-secondary inline-block">
                 Publication Associate
               </h3>
-              
+
               <div className="prose prose-gray max-w-none text-gray-700 space-y-6">
                 <p>
                   <strong className="text-odisha-primary">Vidwan Publications</strong> was established to produce quality educational materials. It is an in-house publishing house of SCT. It aims to help students with various study materials for students those are interested beyond the regular books. It produces quality teacher's training materials or hand outs to enhance the quality of teaching.

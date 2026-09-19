@@ -29,11 +29,11 @@ const Footer = () => {
             <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
             <ul className="space-y-3 text-sm text-gray-300">
               <li><Link to="/mega" className="hover:text-odisha-primary transition-colors">Our Mega successes</Link></li>
-              <li><Link to="/activity-1" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
-              <li><Link to="/teachers" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
+              <li><Link to="/wings/science-movement" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
+              <li><Link to="/opttri" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
               <li><Link to="/student" className="hover:text-odisha-primary transition-colors">Student awareness program</Link></li>
               <li><Link to="/emergency" className="hover:text-odisha-primary transition-colors">Emergency relief</Link></li>
-              <li><Link to="/skill" className="hover:text-odisha-primary transition-colors">Skill & entrepreneurship development</Link></li>
+              <li><Link to="/what-we-do/skill" className="hover:text-odisha-primary transition-colors">Skill & entrepreneurship development</Link></li>
               <li><Link to="/ets" className="hover:text-odisha-primary transition-colors">Environment, Technology & Sustainability</Link></li>
               <li><Link to="/wash" className="hover:text-odisha-primary transition-colors">Water, Sanitation & Hygiene</Link></li>
               <li><Link to="/csr-or-program" className="hover:text-odisha-primary transition-colors">CSR or Program Partnership</Link></li>
@@ -46,10 +46,10 @@ const Footer = () => {
             <img src="/img/title-bottom.png" alt="" className="h-2 w-auto mb-6 opacity-80" />
             <ul className="space-y-3 text-sm text-gray-300">
               <li><Link to="/knowledge" className="hover:text-odisha-primary transition-colors">Knowledge Associate</Link></li>
-              <li><Link to="/public" className="hover:text-odisha-primary transition-colors">Publication Associate</Link></li>
+              <li><Link to="/public-associate" className="hover:text-odisha-primary transition-colors">Publication Associate</Link></li>
               <li><Link to="/training" className="hover:text-odisha-primary transition-colors">Training Associate</Link></li>
-              <li><Link to="/activity-1" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
-              <li><Link to="/teachers" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
+              <li><Link to="/wings/science-movement" className="hover:text-odisha-primary transition-colors">Science Movement</Link></li>
+              <li><Link to="/opttri" className="hover:text-odisha-primary transition-colors">Teachers Training</Link></li>
               <li><Link to="/annual-reports" className="hover:text-odisha-primary transition-colors">Annual Reports</Link></li>
               <li><Link to="/career" className="hover:text-odisha-primary transition-colors">Career</Link></li>
             </ul>

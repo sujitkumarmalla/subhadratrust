@@ -4,7 +4,7 @@ import PageBanner from '../components/PageBanner';
 const OurHistory = () => {
   return (
     <div className="bg-smooth min-h-screen">
-      <PageBanner 
+      <PageBanner
         title="Our History"
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about' }, { label: 'Our History' }]}
         backPath="/about"
@@ -28,7 +28,7 @@ const OurHistory = () => {
             {/* Timeline Item 1 */}
             <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="md:w-1/3">
-                <img src="/img/poor_child_4.jpg" alt="Foundation" className="w-full h-64 object-cover rounded-xl shadow-md" />
+                <img src="/img/couses-8.jpg" alt="Foundation" className="w-full h-64 object-cover rounded-xl shadow-md" />
               </div>
               <div className="md:w-2/3">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-odisha-primary text-white mb-4 shadow-lg">
@@ -45,7 +45,7 @@ const OurHistory = () => {
             {/* Timeline Item 2 */}
             <div className="flex flex-col md:flex-row-reverse gap-8 items-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="md:w-1/3">
-                <img src="/img/poor_child_1.jpg" alt="Education Growth" className="w-full h-64 object-cover rounded-xl shadow-md" />
+                <img src="/img/couses-6.jpg" alt="Education Growth" className="w-full h-64 object-cover rounded-xl shadow-md" />
               </div>
               <div className="md:w-2/3">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-odisha-secondary text-white mb-4 shadow-lg">
@@ -62,7 +62,7 @@ const OurHistory = () => {
             {/* Timeline Item 3 */}
             <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="md:w-1/3">
-                <img src="/img/science_workshop.jpg" alt="Community Outreach" className="w-full h-64 object-cover rounded-xl shadow-md" />
+                <img src="/img/scen.jpg" alt="Community Outreach" className="w-full h-64 object-cover rounded-xl shadow-md" />
               </div>
               <div className="md:w-2/3">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-odisha-tertiary text-white mb-4 shadow-lg">

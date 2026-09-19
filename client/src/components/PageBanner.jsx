@@ -32,6 +32,14 @@ const PageBanner = ({ title, breadcrumbs, backPath, backText }) => {
           </div>
         )}
         
+        {backPath && backText && (
+          <div className="mt-6">
+            <Link to={backPath} className="inline-flex items-center space-x-2 text-white hover:text-odisha-secondary transition-colors text-sm font-semibold tracking-wider">
+              <span>←</span>
+              <span>{backText}</span>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

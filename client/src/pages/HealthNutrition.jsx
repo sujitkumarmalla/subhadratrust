@@ -1,76 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaAppleAlt, FaStethoscope, FaHandsHelping, FaArrowRight } from 'react-icons/fa';
+import { FaHeartbeat } from 'react-icons/fa';
+import PageBanner from '../components/PageBanner';
 
 const HealthNutrition = () => {
   return (
-    <div className="bg-smooth min-h-screen pt-24 pb-12">
-      {/* Hero Header */}
-      <section className="relative py-20 bg-odisha-navy text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/img/poor_child_6.jpg" alt="Health and Nutrition" className="w-full h-full object-cover opacity-30" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-md">Health & Nutrition Causes</h1>
-          <p className="text-xl max-w-2xl mx-auto text-white/90 drop-shadow-sm">
-            Eradicating hunger and providing accessible healthcare for the poorest communities.
-          </p>
-        </div>
-      </section>
+    <div className="bg-smooth min-h-screen">
+      <PageBanner 
+        title="Health & Nutrition"
+        breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'What We Do' }, { label: 'Health & Nutrition' }]}
+        backPath="/"
+        backText="BACK TO HOME"
+      />
 
-      {/* Main Content */}
-      <section className="py-16 container mx-auto px-4 max-w-6xl">
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl font-serif text-odisha-navy mb-6">Healing and Feeding Our Communities</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Good health and proper nutrition are the bedrock of a thriving society. Sadly, many impoverished families struggle to put food on the table or access basic medical care. Our trust is actively working to bridge this gap.
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              By funding medical camps, distributing essential food supplies, and providing financial aid for severe medical cases, we aim to uplift the poorest strata of society and ensure they live a healthy, dignified life.
-            </p>
-            <Link to="/campaigns" className="inline-flex items-center bg-odisha-secondary hover:bg-odisha-navy text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-              Explore Our Health Campaigns <FaArrowRight className="ml-2" />
-            </Link>
-          </div>
-          <div className="md:w-1/2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-odisha-primary rounded-3xl transform -translate-x-4 translate-y-4 opacity-30"></div>
-              <img src="/img/poor_child_1.jpg" alt="Food distribution" className="relative z-10 rounded-3xl shadow-xl w-full object-cover h-[400px]" />
+      {/* Main Content Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            {/* Text Side */}
+            <div className="md:w-1/2 flex flex-col justify-center">
+              <div className="inline-flex items-center space-x-2 text-odisha-secondary font-bold tracking-widest uppercase text-sm mb-4">
+                <FaHeartbeat />
+                <span>Good Health and Well-Being</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif text-odisha-navy mb-6 leading-tight">
+                Health & Nutrition Causes
+              </h2>
+              <p className="text-gray-700 mb-6 leading-relaxed text-justify">
+                Focusing on SDG 3, 'good health and well-being', the Trust has the target to work on health intervention aspects. As a part of basic provision - health and nutritional provisions are highly essential for the stakeholders in the communities. To meet those requirements, SCT aims to assist and develop the public health systems working with government and private health institutions, dispensaries, hospitals, maternity homes, child welfare centers, or other similar institutions or centers to provide medical relief and aid. Not only this, but SCT also looks for partnerships with research centers and institutions for promotion of research and education for medical science including surgery.
+              </p>
+              <p className="text-gray-700 mb-8 leading-relaxed text-justify">
+                Financial assistance is to be provided to the needy and indigent persons to meet the cost of medical treatment or nutritional care. Apart from the direct provisions, many awareness programs are planned to be conducted on health and nutritional care. SCT aims to work towards arranging blood donation camps, free eye camps, medical check-ups, and different health awareness programs on different diseases, i.e. malaria, cancer, leprosy, and other communicable diseases including drug addiction cases. It has a special focus on leprosy and SCT aims to create or promote an environment for leprosy eradication and rehabilitation for those affected with leprosy. The Trust looks for working for the benefit of the physically and mentally challenged persons and to provide the necessary support. The vulnerable children to be taken for educational support in CIS will be provided with good health care and quality food with proper nutritional supplements. Many health check-up camps are to be conducted for the stakeholders in the nearby communities.
+              </p>
             </div>
-          </div>
-        </div>
 
-        {/* Key Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaAppleAlt />
+            {/* Image Side */}
+            <div className="md:w-1/2 w-full sticky top-32">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform md:-rotate-2 hover:rotate-0 transition-transform duration-500 relative group">
+                <div className="absolute inset-0 bg-odisha-navy/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                <img 
+                  src="/img/primary(8).jpg" 
+                  alt="Health & Nutrition Medical Relief" 
+                  className="w-full h-auto object-cover relative z-0"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 z-20">
+                  <h3 className="text-white text-xl font-serif font-bold">Medical & Nutritional Relief</h3>
+                  <p className="text-white/80 text-sm">Ensuring well-being through accessible healthcare and nutrition.</p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Mid-Day Meals & Rations</h3>
-            <p className="text-gray-600">
-              We provide free, nutritious meals to school children and distribute monthly ration kits to impoverished families and destitute elderly persons.
-            </p>
-          </div>
-          
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaStethoscope />
-            </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Free Medical Camps</h3>
-            <p className="text-gray-600">
-              Organizing regular health check-ups, eye camps, and supplying free medicines to remote villages where healthcare access is limited.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mb-6">
-              <FaHandsHelping />
-            </div>
-            <h3 className="text-xl font-bold text-odisha-navy mb-4">Emergency Medical Funds</h3>
-            <p className="text-gray-600">
-              Offering direct financial assistance for critical surgeries and treatments to those who cannot afford life-saving medical care.
-            </p>
           </div>
         </div>
       </section>
