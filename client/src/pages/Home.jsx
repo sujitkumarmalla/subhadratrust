@@ -44,27 +44,27 @@ const Home = () => {
   return (
     <div className="bg-smooth min-h-screen">
       {/* Hero Slider Section */}
-      <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden bg-gray-100 group">
+      <section className="relative w-full aspect-[2/1] sm:aspect-[21/9] md:aspect-auto md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden bg-white group">
         {heroImages.map((img, index) => (
           <img
             key={index}
             src={img}
             alt={`Subhadra Charitable Trust Slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-fill md:object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            className={`absolute inset-0 w-full h-full object-contain md:object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
           />
         ))}
 
         {/* Navigation Arrows */}
         <button
           onClick={prevImage}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-r-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
+          className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-r-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
           aria-label="Previous Slide"
         >
           <FaChevronLeft className="text-xl md:text-2xl" />
         </button>
         <button
           onClick={nextImage}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-l-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
+          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#00a651] text-white p-3 md:p-4 rounded-l-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#008a43]"
           aria-label="Next Slide"
         >
           <FaChevronRight className="text-xl md:text-2xl" />
@@ -85,7 +85,7 @@ const Home = () => {
 
 
       {/* Quick Impact Banner */}
-      <div className="bg-odisha-primary py-8 relative z-30 shadow-2xl -mt-10 mx-4 md:mx-auto max-w-6xl rounded-2xl animate-fade-in-up delay-200">
+      <div className="hidden md:block bg-odisha-primary py-8 relative z-30 shadow-2xl -mt-10 mx-4 md:mx-auto max-w-6xl rounded-2xl animate-fade-in-up delay-200">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 text-white text-center">
           <div>
             <h3 className="text-4xl font-bold text-odisha-secondary mb-1">5,000+</h3>

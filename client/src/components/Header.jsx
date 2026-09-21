@@ -39,25 +39,25 @@ const Header = () => {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-0' : 'bg-white py-2'}`}>
-      {/* Top Bar - Cooling UI Blue */}
-      <div className="bg-[#102C57] text-white py-2 text-sm border-b border-[#00a65a]/30">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-4 mb-2 md:mb-0">
+      {/* Top Bar - Green */}
+      <div className="bg-[#00a65a] text-white py-2 text-sm border-b border-[#00a65a]/30">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center">
+          <div className="flex justify-center items-center space-x-4 mb-2 md:mb-0">
             <span className="font-semibold text-xs tracking-wider">Follow Us On:</span>
             <div className="flex space-x-3">
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaFacebookF /></a>
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaTwitter /></a>
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaGooglePlusG /></a>
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaDribbble /></a>
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaRss /></a>
-              <a href="#" className="hover:text-[#00a65a] transition-colors"><FaLinkedinIn /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaFacebookF /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaTwitter /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaGooglePlusG /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaDribbble /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaRss /></a>
+              <a href="#" className="hover:text-gray-200 transition-colors"><FaLinkedinIn /></a>
             </div>
           </div>
-          <div className="flex space-x-6 text-xs font-semibold tracking-wider">
-            <a href="mailto:subhadratrust@gmail.com" className="flex items-center space-x-2 hover:text-[#00a65a] transition-colors">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-xs font-semibold tracking-wider items-center justify-center">
+            <a href="mailto:subhadratrust@gmail.com" className="flex items-center space-x-2 hover:text-gray-200 transition-colors">
               <FaEnvelope /> <span>Email:subhadratrust@gmail.com</span>
             </a>
-            <a href="tel:+91-9439112233" className="flex items-center space-x-2 hover:text-[#00a65a] transition-colors">
+            <a href="tel:+91-9439112233" className="flex items-center space-x-2 hover:text-gray-200 transition-colors">
               <FaPhone /> <span>Phone: +91-9439112233</span>
             </a>
           </div>
@@ -65,14 +65,19 @@ const Header = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 flex justify-between items-center relative">
+      <div className="container mx-auto px-4 flex justify-between items-center relative py-2">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0 py-2">
+        <Link to="/" className="flex-shrink-0">
           <img 
             src="https://www.subhadracharitabletrust.org/img/logo.jpg" 
             alt="Logo" 
-            className="h-16 w-16"
+            className="h-20 w-auto"
           />
+        </Link>
+        
+        {/* Mobile Donate Button next to Logo */}
+        <Link to="/donate" className="lg:hidden bg-[#00a65a] text-white font-bold py-2 px-5 rounded text-sm shadow-sm transition-colors hover:bg-[#008a4a]">
+          DONATE
         </Link>
 
         {/* Desktop Menu */}
@@ -145,10 +150,15 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button className="lg:hidden text-2xl text-[#102C57]" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+      </div>
+
+      {/* Mobile Menu Toggle Bar */}
+      <div className="lg:hidden w-full bg-[#4d4d4d] flex justify-between items-center px-4 py-3 text-white cursor-pointer" onClick={toggleMobileMenu}>
+        <span className="font-bold text-xl tracking-wider">MENU</span>
+        <button className="text-2xl" aria-label="Toggle mobile menu">
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
+      </div>
 
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
@@ -247,7 +257,6 @@ const Header = () => {
             </div>
           </div>
         )}
-      </div>
     </header>
   );
 };
